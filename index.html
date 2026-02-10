@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krasses Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; cursor: none; }
+        
+        #cursor {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+
+        .glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="text-white overflow-x-hidden">
+
+    <div id="cursor"></div>
+
+    <div class="glow top-[-10%] left-[-10%]"></div>
+    <div class="glow bottom-[-10%] right-[-10%]"></div>
+
+    <nav class="flex justify-between items-center p-10 uppercase tracking-widest text-sm opacity-0" id="nav">
+        <div class="font-bold border-b-2 border-white">Code & Design</div>
+        <div class="space-x-8">
+            <a href="#" class="hover:text-indigo-400 transition">Work</a>
+            <a href="#" class="hover:text-indigo-400 transition">Contact</a>
+        </div>
+    </nav>
+
+    <section class="h-[90vh] flex flex-col justify-center items-center text-center">
+        <h1 class="text-[12vw] font-black leading-none uppercase select-none" id="title">
+            FUTURE<br><span class="text-transparent" style="-webkit-text-stroke: 1px white;">DIGITAL</span>
+        </h1>
+        <p class="mt-8 text-gray-500 text-lg tracking-[0.5em] uppercase opacity-0" id="subtitle">
+            Crafting code into art
+        </p>
+    </section>
+
+    <section class="p-20 grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="project-card h-[500px] bg-zinc-900 overflow-hidden relative group">
+            <div class="absolute inset-0 bg-indigo-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            <div class="relative p-10 z-10">
+                <span class="text-xs font-mono text-zinc-500 group-hover:text-white">01 / BRANDING</span>
+                <h2 class="text-4xl font-bold mt-4">Cyber Punk</h2>
+            </div>
+        </div>
+        <div class="project-card h-[500px] bg-zinc-900 overflow-hidden relative group mt-20">
+            <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            <div class="relative p-10 z-10 group-hover:text-black">
+                <span class="text-xs font-mono text-zinc-500">02 / INTERACTION</span>
+                <h2 class="text-4xl font-bold mt-4">Neon Dreams</h2>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cursor = document.querySelector("#cursor");
+        document.addEventListener("mousemove", (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1
+            });
+        });
+
+        const tl = gsap.timeline();
+        tl.to("#nav", { opacity: 1, duration: 1 })
+          .from("#title", { y: 100, opacity: 0, skewY: 10, duration: 1.5, ease: "power4.out" }, "-=0.5")
+          .to("#subtitle", { opacity: 1, duration: 1 }, "-=1");
+
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.utils.toArray(".project-card").forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+
+        const links = document.querySelectorAll("a, .project-card");
+        links.forEach(link => {
+            link.addEventListener("mouseenter", () => gsap.to(cursor, { scale: 4, alpha: 0.3 }));
+            link.addEventListener("mouseleave", () => gsap.to(cursor, { scale: 1, alpha: 1 }));
+        });
+    </script>
+</body>
+</html>
