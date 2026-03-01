@@ -1366,7 +1366,6 @@ body {
         font-size: 0.7rem;
         border-radius: 20px;
     }
-}
 
 .lang-switch {
     display: flex;
@@ -1393,5 +1392,6 @@ body {
 
 .lang-switch button:hover:not(.active) {
     background: rgba(255, 255, 255, 0.2);
+}
 }
 
