@@ -21,12 +21,17 @@
                 <li><a href="#home" class="nav-link" data-en="Home" data-de="Start">Home</a></li>
                 <li><a href="#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
                 <li><a href="#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-en="Skills" data-de="Skills">Skills</a></li>
                 <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
+        <div class="stars"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="title">PHILIPP ZINHOBL</h1>
@@ -35,23 +40,51 @@
                     <span class="subtitle">Game & Minecraft Developer</span>
                 </div>
                 <p class="description" 
-                   data-en="I create immersive worlds in Unity and high-performance backend solutions for Minecraft servers using the PaperAPI." 
-                   data-de="Ich erschaffe immersive Welten in Unity und leistungsstarke Backend-Lösungen für Minecraft-Server mit der PaperAPI.">
-                   I create immersive worlds in Unity and high-performance backend solutions for Minecraft servers using the PaperAPI.
+                   data-en="I develop immersive gaming experiences in Unity and high-performance backend solutions for Minecraft servers using the PaperAPI." 
+                   data-de="Ich entwickle immersive Spielerlebnisse in Unity und leistungsstarke Backend-Lösungen für Minecraft Server mit der PaperAPI.">
+                   I develop immersive gaming experiences in Unity and high-performance backend solutions for Minecraft servers using the PaperAPI.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary" data-en="My Projects" data-de="Meine Projekte">My Projects</a>
-                    <a href="#contact" class="btn btn-secondary" data-en="Contact Me" data-de="Kontakt">Contact Me</a>
+                    <a href="#contact" class="btn btn-secondary" data-en="Let's Work Together" data-de="Zusammenarbeiten">Let's Work Together</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="floating-card">
-                    <div class="code-block">
-                        <span class="code-comment">// Minecraft (Java)</span><br>
-                        <span class="code-red">public class</span> <span class="code-green">Plugin</span> { }<br><br>
-                        <span class="code-comment">// Unity (C#)</span><br>
-                        <span class="code-red">void</span> <span class="code-blue">Update</span>() { }
+                    <div class="card-content">
+                        <div class="code-block">
+                            <span class="code-comment">// Minecraft (Java)</span><br>
+                            <span class="code-red">public class</span> <span class="code-green">Plugin</span> <span class="code-red">extends</span> JavaPlugin { }<br>
+                            <br>
+                            <span class="code-comment">// Unity (C#)</span><br>
+                            <span class="code-red">void</span> <span class="code-blue">Update</span>() { transform.Rotate(Vector3.up); }
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><div class="mouse"></div></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-en="MY JOURNEY" data-de="MEINE REISE">MY JOURNEY</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-en="Hello! I'm Philipp, a passionate developer from Austria. Starting with complex systems in Minecraft, I am now expanding my spectrum to independent game development with Unity." 
+                       data-de="Hallo! Ich bin Philipp, ein leidenschaftlicher Entwickler aus Österreich. Angefangen mit komplexen Systemen in Minecraft, erweitere ich mein Spektrum nun auf die eigenständige Spieleentwicklung mit Unity.">
+                       Hello! I'm Philipp, a passionate developer from Austria. Starting with complex systems in Minecraft, I am now expanding my spectrum to independent game development with Unity.
+                    </p>
+                    <ul class="about-list">
+                        <li><span class="bullet">→</span> <b data-en="Game Development:" data-de="Spieleentwicklung:">Game Development:</b> Unity Engine & C# (3D/2D)</li>
+                        <li><span class="bullet">→</span> <b>Minecraft:</b> 4+ <span data-en="Years of experience" data-de="Jahre Erfahrung">Years of experience</span></li>
+                        <li><span class="bullet">→</span> <b data-en="Architecture:" data-de="Architektur:">Architecture:</b> <span data-en="Scalable systems & clean code" data-de="Skalierbare Systeme & sauberer Code">Scalable systems & clean code</span></li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box"><h3>4+</h3><p data-en="Years Experience" data-de="Jahre Erfahrung">Years Experience</p></div>
+                    <div class="stat-box"><h3>2</h3><p data-en="Engines" data-de="Engines">Engines</p></div>
+                    <div class="stat-box"><h3>30+</h3><p data-en="Projects" data-de="Projekte">Projects</p></div>
                 </div>
             </div>
         </div>
@@ -63,15 +96,76 @@
             <div class="projects-grid">
                 <div class="project-card unity">
                     <div class="project-status" data-en="In Development" data-de="In Entwicklung">In Development</div>
+                    <div class="project-image"><div class="project-icon">🚀</div></div>
                     <h3>Unity Game Project</h3>
-                    <p data-en="Standalone game focused on smooth mechanics and C# scripting." 
-                       data-de="Eigenständiges Spiel mit Fokus auf flüssige Mechaniken und C# Scripting.">
-                       Standalone game focused on smooth mechanics and C# scripting.
-                    </p>
+                    <p data-en="Independent project focused on smooth gameplay and C# scripting." data-de="Eigenständiges Spielprojekt mit Fokus auf flüssiges Gameplay und C#-Scripting.">Independent project focused on smooth gameplay and C# scripting.</p>
+                    <div class="project-tags"><span>Unity</span><span>C#</span></div>
+                    <a href="#" class="project-link" data-en="View Showcase →" data-de="Showcase ansehen →">View Showcase →</a>
+                </div>
+                <div class="project-card minecraft">
+                    <div class="project-status">Live</div>
+                    <div class="project-image"><div class="project-icon">⛏️</div></div>
+                    <h3>WLP Framework</h3>
+                    <p data-en="Powerful Java framework for Minecraft servers." data-de="Leistungsstarkes Java-Framework für Minecraft Server.">Powerful Java framework for Minecraft servers.</p>
+                    <div class="project-tags"><span>Java</span><span>PaperAPI</span></div>
+                    <a href="https://github.com/welovepaperapi/WLPFramework" class="project-link" data-en="GitHub Repo →" data-de="GitHub Repo →">GitHub Repo →</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">TECH STACK</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 data-en="Game Development" data-de="Spieleentwicklung">Game Development</h3>
+                    <div class="skill-bar"><div class="skill-name">Unity / C#</div><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
+                </div>
+                <div class="skill-category">
+                    <h3>Minecraft Development</h3>
+                    <div class="skill-bar"><div class="skill-name">Java / PaperAPI</div><div class="progress-bar"><div class="progress" style="width: 97%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="LET'S WORK TOGETHER" data-de="LASS UNS ARBEITEN">LET'S WORK TOGETHER</h2>
+            <div class="contact-content-wrapper">
+                <div class="form-wrapper">
+                    <div class="lock-overlay"><div class="lock-icon">🔒</div></div>
+                    <form class="contact-form">
+                        <div class="form-group"><input type="text" placeholder="Name" required></div>
+                        <div class="form-group"><input type="email" placeholder="E-Mail" required></div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" data-en="Project Type" data-de="Projekt-Typ">Project Type</option>
+                                <option value="unity">Unity Game</option>
+                                <option value="minecraft">Minecraft Plugin</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><textarea data-en="Your Message..." data-de="Deine Nachricht..." placeholder="Your Message..." rows="5" required></textarea></div>
+                        <button type="submit" class="btn btn-primary" data-en="Send Message" data-de="Abschicken">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card"><h4>E-Mail</h4><p>phrugu18@gmail.com</p></div>
+                    <div class="contact-card"><h4 data-en="Links" data-de="Links">Links</h4>
+                        <div class="social-links">
+                            <a href="https://github.com/welovepaperapi">GitHub</a>
+                            <a href="https://discord.gg/qJmthwpapG">Discord</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Philipp Zinhobl | <a href="impressum.html">Impressum</a></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
