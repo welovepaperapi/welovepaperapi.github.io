@@ -343,5 +343,49 @@ if (lockOverlay && lockIcon) {
     });
 }
 
+function setLanguage(lang) {
+    // Alle Elemente mit Übersetzungs-Attributen finden
+    const elements = document.querySelectorAll('[data-en]');
+    
+    elements.forEach(el => {
+        const text = lang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
+        
+        // Prüfen ob es ein Input/Textarea ist (wegen Placeholder)
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+        } else {
+            el.textContent = text;
+        }
+    });
+
+    // Buttons aktualisieren
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+
+    // HTML lang Attribut ändern
+    document.documentElement.lang = lang;
+    
+    // Speichern
+    localStorage.setItem('preferredLang', lang);
+}
+
+// Beim Laden Sprache wiederherstellen
+window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+});
+
+// Hamburger Menu Logic (falls vorhanden)
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+if(hamburger) {
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+}
+
 console.log('🚀 Portfolio loaded successfully!');
 console.log('✨ Made with love by Philipp Zinhobl');
+
